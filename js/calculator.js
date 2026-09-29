@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let serviceType = 'standard'; // 'standard', 'deep', 'move'
   let bedrooms = 3;
   let bathrooms = 2;
-  let frequency = 'biweekly'; // 'onetime', 'weekly', 'biweekly', 'monthly'
-  let frequencyDiscount = 0.15; // 15% off for biweekly
+  let frequency = 'weekly'; // 'onetime', 'weekly', 'biweekly', 'monthly'
+  let frequencyDiscount = 0.05; // 5% off for weekly
 
   // Pricing Matrix
   const basePrices = {
@@ -87,9 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const freqLabels = {
       onetime: 'One-Time Service',
-      weekly: 'Weekly (20% Savings)',
-      biweekly: 'Bi-Weekly (15% Savings)',
-      monthly: 'Monthly (10% Savings)'
+      weekly: 'Weekly (5% Savings)',
+      biweekly: 'Bi-Weekly',
+      monthly: 'Monthly'
     };
 
     if (summaryService) summaryService.textContent = serviceLabels[serviceType];
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
       freqButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       frequency = btn.dataset.freq;
-      frequencyDiscount = parseFloat(btn.dataset.discount) || 0;
+      frequencyDiscount = frequency === 'weekly' ? 0.05 : 0;
       calculateEstimate();
     });
   });
