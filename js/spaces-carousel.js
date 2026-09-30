@@ -169,9 +169,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Autoplay (3.5 seconds timing between each image)
+  // Autoplay (10 seconds timing per image with full manual control)
   function startAutoplay() {
-    autoPlayTimer = setInterval(nextSlide, 3500);
+    clearInterval(autoPlayTimer);
+    autoPlayTimer = setInterval(nextSlide, 10000);
   }
 
   function resetAutoplay() {

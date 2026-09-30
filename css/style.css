@@ -141,54 +141,53 @@ textarea {
   align-items: center;
   justify-content: space-between;
   height: var(--nav-height);
-  gap: 1rem;
+  gap: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .site-brand {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  text-decoration: none;
   flex-shrink: 0;
+  padding-left: 0.5rem;
 }
 
-.brand-icon-box {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #0284c7 0%, #10b981 100%);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
-}
-
-.brand-text {
+.site-brand-logo-wrap {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
 }
 
-.brand-name {
-  font-family: var(--font-heading);
-  font-size: 1.18rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #ffffff;
-  line-height: 1.1;
-  white-space: nowrap;
+.header-logo-svg {
+  height: 34px;
+  width: auto;
+  max-width: 155px;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(56, 189, 248, 0.25));
+  transition: transform var(--transition-fast), filter var(--transition-fast);
 }
 
-.brand-name span {
-  color: var(--accent-cyan);
+.site-brand:hover .header-logo-svg {
+  transform: scale(1.02);
+  filter: drop-shadow(0 3px 12px rgba(56, 189, 248, 0.45));
 }
 
 .brand-sub {
-  font-size: 0.65rem;
-  font-weight: 600;
+  font-size: 0.60rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #94a3b8;
   white-space: nowrap;
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.site-brand:hover .brand-sub {
+  color: #38bdf8;
 }
 
 .nav-menu {
@@ -2369,13 +2368,24 @@ textarea.form-control {
 
 .form-success-banner {
   display: none;
-  background: #ecfdf5;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.95) 0%, rgba(6, 95, 70, 0.95) 100%);
   border: 1px solid #10b981;
-  color: #065f46;
-  padding: 0.85rem 1rem;
+  color: #ecfdf5;
+  padding: 1rem 1.25rem;
   border-radius: var(--radius-md);
-  margin-bottom: 1rem;
-  font-weight: 600;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.25);
+  backdrop-filter: blur(12px);
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.form-success-banner svg {
+  color: #34d399;
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -2451,7 +2461,7 @@ textarea.form-control {
 /* Tablet & Mobile Landscape (< 980px) */
 @media (max-width: 980px) {
   :root {
-    --nav-height: 70px;
+    --nav-height: 72px;
   }
 
   body {
@@ -2462,6 +2472,8 @@ textarea.form-control {
   .container {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .section-padding {
@@ -2473,6 +2485,16 @@ textarea.form-control {
   }
 
   /* Header */
+  .header-logo-svg {
+    height: 30px;
+    max-width: 135px;
+  }
+
+  .brand-sub {
+    font-size: 0.55rem;
+    letter-spacing: 0.06em;
+  }
+
   .mobile-toggle-btn {
     display: flex;
     align-items: center;
@@ -2531,12 +2553,15 @@ textarea.form-control {
   .calc-wrapper {
     grid-template-columns: 1fr;
     gap: 1.75rem;
+    width: 100%;
+    max-width: 100%;
   }
 
   /* Services & Reviews Horizontal Slider on Mobile */
   .services-slider-wrapper,
   .reviews-slider-wrapper {
     width: 100%;
+    max-width: 100%;
     overflow: hidden;
   }
 
@@ -2554,6 +2579,7 @@ textarea.form-control {
     gap: 1.25rem;
     padding: 0.25rem 0.2rem 0.65rem 0.2rem;
     scrollbar-width: none;
+    width: 100%;
   }
 
   .services-grid-3::-webkit-scrollbar,
@@ -2571,6 +2597,7 @@ textarea.form-control {
     flex-direction: column;
     justify-content: space-between;
     touch-action: pan-y pan-x;
+    box-sizing: border-box;
   }
 
   /* Why Us Bento Grid Mobile Adaptation */
@@ -2578,6 +2605,7 @@ textarea.form-control {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    width: 100%;
   }
 
   .bento-hero,
@@ -2585,10 +2613,13 @@ textarea.form-control {
   .why-slider-wrapper {
     grid-column: auto;
     width: 100%;
+    max-width: 100%;
   }
 
   .bento-card {
     padding: 1.6rem;
+    box-sizing: border-box;
+    width: 100%;
   }
 
   .bento-hero-top {
@@ -2616,6 +2647,7 @@ textarea.form-control {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.4rem;
+    width: 100%;
   }
 
   .why-hotspot-btn {
@@ -2628,6 +2660,8 @@ textarea.form-control {
   /* Horizontal Slider for Bottom 3 Bento Cards */
   .why-slider-wrapper {
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
   }
 
   .why-sub-grid {
@@ -2643,6 +2677,7 @@ textarea.form-control {
     gap: 1rem;
     padding: 0.25rem 0.2rem 0.6rem 0.2rem;
     scrollbar-width: none;
+    width: 100%;
   }
 
   .why-sub-grid::-webkit-scrollbar {
@@ -2656,6 +2691,7 @@ textarea.form-control {
     scroll-snap-stop: always;
     padding: 1.5rem;
     touch-action: pan-y pan-x;
+    box-sizing: border-box;
   }
 
   .slider-dots-indicator {
@@ -2670,42 +2706,53 @@ textarea.form-control {
   .hero-trust-cards {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.6rem;
+    width: 100%;
   }
 
   .simple-steps-row {
     grid-template-columns: 1fr;
     gap: 0.75rem;
+    width: 100%;
   }
 
   .step-mini-card {
     padding: 0.75rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .who-serve-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
+    width: 100%;
   }
 
   .form-grid-2 {
     grid-template-columns: 1fr;
+    width: 100%;
   }
 
   .service-type-selector {
     grid-template-columns: 1fr;
+    width: 100%;
   }
 
   .frequency-selector {
     grid-template-columns: repeat(2, 1fr);
+    width: 100%;
   }
 
   .custom-plans-stage {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+    width: 100%;
+    max-width: 100%;
   }
 
   .plan-stage-left {
     align-items: center;
     text-align: center;
+    width: 100%;
   }
 
   .plan-stage-title {
@@ -2714,6 +2761,7 @@ textarea.form-control {
 
   .quality-points-grid {
     grid-template-columns: 1fr;
+    width: 100%;
   }
 
   .mobile-action-bar {
@@ -2724,98 +2772,177 @@ textarea.form-control {
 /* Mobile Phones (< 600px) */
 @media (max-width: 600px) {
   :root {
-    --nav-height: 64px;
+    --nav-height: 68px;
   }
 
   .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .site-header .navbar-container {
+    gap: 0.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .site-brand {
+    padding-left: 0.5rem;
+  }
+
+  .header-logo-svg {
+    height: 28px;
+    max-width: 125px;
+  }
+
+  .brand-sub {
+    font-size: 0.52rem;
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+  }
+
+  .header-actions {
+    gap: 0.65rem;
+  }
+
+  .lang-switch-btn {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.76rem;
+    gap: 0.3rem;
+  }
+
+  .mobile-toggle-btn {
+    width: 38px;
+    height: 38px;
+    padding: 7px;
   }
 
   .section-padding {
-    padding: 2.75rem 0;
+    padding: 3rem 0;
   }
 
   .section-title {
-    font-size: 1.65rem;
+    font-size: clamp(1.45rem, 5.5vw, 1.75rem);
+    line-height: 1.25;
+    word-break: break-word;
   }
 
   .section-desc {
     font-size: 0.9rem;
   }
 
-  .brand-name {
-    font-size: 1.05rem;
-  }
-
-  .brand-sub {
-    font-size: 0.65rem;
-  }
-
-  .brand-icon-box {
-    width: 34px;
-    height: 34px;
-  }
-
-  /* Hero on Small Screens */
+  /* Hero on Small Screens (Generous breathing room & spacing) */
   .hero-section {
-    padding: 3rem 0;
+    padding: 3.5rem 0 3.25rem 0;
     min-height: auto;
+    overflow: hidden;
+  }
+
+  .hero-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .hero-brand-emblem {
-    max-width: 250px;
-    margin-bottom: 1.1rem;
+    max-width: min(270px, 80vw);
+    margin: 0 auto 1.85rem auto;
+    width: 100%;
+  }
+
+  .hero-tag {
+    margin-bottom: 1.65rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .badge-pill {
+    font-size: 0.74rem;
+    padding: 0.45rem 1rem;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+    max-width: 100%;
+    word-break: break-word;
   }
 
   .hero-title {
-    font-size: 1.85rem;
+    font-size: clamp(1.5rem, 6.2vw, 1.95rem);
     line-height: 1.25;
+    margin-bottom: 2.25rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
-  .hero-subtitle {
-    font-size: 0.92rem;
-  }
-
-  .hero-cta-group {
+  .hero-actions {
+    display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 0.75rem;
+    max-width: 320px;
+    margin: 0 auto 3rem auto;
+    gap: 0.95rem;
   }
 
-  .hero-cta-group .btn {
+  .hero-actions .btn {
     width: 100%;
     justify-content: center;
+    padding: 0.95rem 1.25rem;
+    font-size: 0.96rem;
+    border-radius: var(--radius-md);
+    box-sizing: border-box;
   }
 
   .hero-trust-cards {
     grid-template-columns: 1fr;
-    gap: 0.5rem;
+    gap: 0.75rem;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 2.25rem;
+  }
+
+  .trust-pill-card {
+    padding: 0.95rem 1.15rem;
+    gap: 0.85rem;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: var(--radius-md);
   }
 
   /* Service Card Sub-Pills */
   .service-pills-nav {
-    padding: 0.2rem;
-    gap: 0.2rem;
+    padding: 0.25rem;
+    gap: 0.25rem;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .service-sub-pill {
-    font-size: 0.72rem;
-    padding: 0.35rem 0.15rem;
+    font-size: 0.75rem;
+    padding: 0.38rem 0.65rem;
   }
 
   .highlight-item {
     font-size: 0.8rem;
     padding: 0.45rem 0.55rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* Bento Cards */
   .bento-card {
-    padding: 1.25rem;
+    padding: 1.2rem 0.95rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .bento-hero-title {
     font-size: 1.35rem;
+    word-break: break-word;
   }
 
   .bento-stat-pill {
@@ -2826,55 +2953,71 @@ textarea.form-control {
   .why-hotspot-display {
     font-size: 0.8rem;
     padding: 0.65rem;
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
   }
 
   /* Sectors and Badges */
   .trust-badges-grid {
     grid-template-columns: 1fr;
+    width: 100%;
   }
 
   .client-sectors-grid {
     grid-template-columns: 1fr;
+    width: 100%;
   }
 
   .custom-plans-stage {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.75rem;
+    width: 100%;
+    max-width: 100%;
   }
 
   .plan-stage-left {
     align-items: center;
     text-align: center;
+    width: 100%;
   }
 
   .plan-stage-title {
-    font-size: 1.75rem;
+    font-size: clamp(1.45rem, 5.5vw, 1.75rem);
     line-height: 1.2;
+    word-break: break-word;
   }
 
   .plan-stage-desc {
-    font-size: 0.9rem;
-    margin-bottom: 1.25rem;
+    font-size: 0.88rem;
+    margin-bottom: 1.15rem;
   }
 
   .plan-frequencies-strip {
     gap: 0.35rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .plan-freq-chip {
-    font-size: 0.74rem;
-    padding: 0.3rem 0.6rem;
+    font-size: 0.72rem;
+    padding: 0.3rem 0.55rem;
   }
 
   .plan-glass-grid {
     grid-template-columns: 1fr;
     gap: 0.75rem;
+    width: 100%;
   }
 
   .plan-glass-card {
-    padding: 1rem 0.9rem;
+    padding: 1rem 0.85rem;
     gap: 0.75rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .plan-glass-title {
@@ -2887,56 +3030,97 @@ textarea.form-control {
 
   .sector-card {
     padding: 0.85rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* Comparison Before After */
   .comparison-wrapper {
-    height: 250px;
+    height: clamp(210px, 50vw, 280px);
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   /* Calculator */
   .calc-card,
   .calc-summary-card {
-    padding: 1.25rem;
+    padding: 1.2rem 0.95rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .calc-price-amount {
-    font-size: 2.2rem;
+    font-size: clamp(1.85rem, 6.5vw, 2.2rem);
   }
 
   .frequency-selector {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.35rem;
+    width: 100%;
   }
 
   .freq-btn {
     font-size: 0.74rem;
     padding: 0.45rem 0.2rem;
+    text-align: center;
+  }
+
+  /* Service Area Lookup */
+  .service-area-search-box {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    gap: 0.5rem;
+  }
+
+  .service-area-search-box input,
+  .service-area-search-box button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .service-cities-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3rem;
+    width: 100%;
+  }
+
+  .city-chip {
+    font-size: 0.74rem;
+    padding: 0.3rem 0.55rem;
   }
 
   /* Contact & Free Estimate Section */
   .contact-info-panel h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     line-height: 1.25;
+    word-break: break-word;
   }
 
   .contact-info-panel p {
-    font-size: 0.9rem;
-    margin-bottom: 1.25rem;
+    font-size: 0.88rem;
+    margin-bottom: 1.15rem;
   }
 
   .contact-card-box {
-    padding: 1.2rem 0.95rem;
+    padding: 1.1rem 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .contact-direct-phone {
-    font-size: 1.45rem;
+    font-size: clamp(1.2rem, 5vw, 1.45rem);
     letter-spacing: -0.02em;
+    word-break: break-all;
   }
 
   .direct-actions-row {
     flex-direction: column;
     gap: 0.55rem;
+    width: 100%;
   }
 
   .direct-actions-row .btn {
@@ -2945,11 +3129,14 @@ textarea.form-control {
     padding: 0.65rem 1rem;
     font-size: 0.88rem;
     justify-content: center;
+    box-sizing: border-box;
   }
 
   .contact-form-card {
-    padding: 1.35rem 1rem;
+    padding: 1.25rem 0.95rem;
     border-radius: var(--radius-md);
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .contact-form-card .btn {
@@ -2957,18 +3144,86 @@ textarea.form-control {
     text-align: center;
     padding: 0.85rem 1rem;
     font-size: 0.92rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* Footer */
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    width: 100%;
   }
 
   .footer-bottom {
     flex-direction: column;
     gap: 0.6rem;
     text-align: center;
+    width: 100%;
+  }
+}
+
+/* Extra Small Mobile (< 380px) */
+@media (max-width: 380px) {
+  :root {
+    --nav-height: 62px;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .site-header .navbar-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .site-brand {
+    padding-left: 0.35rem;
+  }
+
+  .header-logo-svg {
+    height: 24px;
+    max-width: 110px;
+  }
+
+  .brand-sub {
+    font-size: 0.46rem;
+    letter-spacing: 0.02em;
+  }
+
+  .lang-switch-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.72rem;
+    gap: 0.2rem;
+  }
+
+  .hero-title {
+    font-size: 1.42rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    margin: 0 auto 2.5rem auto;
+    gap: 0.85rem;
+  }
+
+  .hero-actions .btn {
+    padding: 0.88rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .calc-card,
+  .calc-summary-card,
+  .bento-card,
+  .contact-card-box,
+  .contact-form-card {
+    padding: 1rem 0.75rem;
+  }
+
+  .mobile-action-btn span {
+    font-size: 0.75rem;
   }
 }
 
@@ -3223,31 +3478,32 @@ textarea.form-control {
 
   .spaces-slide {
     flex: 0 0 88vw;
+    max-width: 90vw;
   }
 
   .spaces-nav-arrow {
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
   }
 
   .spaces-arrow-prev {
-    left: 0.5rem;
+    left: 0.35rem;
   }
 
   .spaces-arrow-next {
-    right: 0.5rem;
+    right: 0.35rem;
   }
 
   .spaces-carousel-vignette {
-    width: 6%;
+    width: 5%;
   }
 
   .spaces-slide-overlay {
-    padding: 1.5rem 1.1rem 1rem 1.1rem;
+    padding: 1.35rem 1rem 0.85rem 1rem;
   }
 
   .spaces-card-title {
-    font-size: 1.15rem;
+    font-size: 1.12rem;
   }
 
   .spaces-card-desc {
@@ -3255,19 +3511,22 @@ textarea.form-control {
   }
 }
 
-.spaces-carousel-vignette {
-  width: 6%;
-}
+@media (max-width: 480px) {
+  .spaces-slide {
+    flex: 0 0 calc(100vw - 2.5rem);
+    max-width: calc(100vw - 2.5rem);
+  }
 
-.spaces-slide-overlay {
-  padding: 1.5rem 1.1rem 1rem 1.1rem;
-}
+  .spaces-nav-arrow {
+    width: 34px;
+    height: 34px;
+  }
 
-.spaces-card-title {
-  font-size: 1.15rem;
-}
+  .spaces-card-title {
+    font-size: 1.02rem;
+  }
 
-.spaces-card-desc {
-  font-size: 0.82rem;
-}
+  .spaces-card-desc {
+    font-size: 0.78rem;
+  }
 }

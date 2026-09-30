@@ -33,15 +33,55 @@
   <header class="site-header" id="site-header">
     <div class="container navbar-container">
       <a href="#home" class="site-brand" aria-label="Clean and Stuff Home">
-        <div class="brand-icon-box">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-            </polygon>
+        <div class="site-brand-logo-wrap">
+          <svg class="header-logo-svg" viewBox="0 0 380 92" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-label="Clean and Stuff Logo">
+            <!-- Gradients -->
+            <defs>
+              <linearGradient id="headerLogoGrad" x1="0" y1="0" x2="380" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#38bdf8" />
+                <stop offset="50%" stop-color="#0284c7" />
+                <stop offset="100%" stop-color="#34d399" />
+              </linearGradient>
+              <linearGradient id="headerLogoGradLeft" x1="10" y1="0" x2="105" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#38bdf8" />
+                <stop offset="100%" stop-color="#0284c7" />
+              </linearGradient>
+              <linearGradient id="headerLogoGradRight" x1="275" y1="0" x2="370" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#0284c7" />
+                <stop offset="100%" stop-color="#34d399" />
+              </linearGradient>
+            </defs>
+
+            <!-- Sparkle Stars -->
+            <path d="M78 28 Q80 34 86 36 Q80 38 78 44 Q76 38 70 36 Q76 34 78 28 Z" fill="#38bdf8" />
+            <path d="M122 10 Q125 18 133 21 Q125 24 122 32 Q119 24 111 21 Q119 18 122 10 Z" fill="#38bdf8" />
+            <path d="M258 10 Q261 18 269 21 Q261 24 258 32 Q255 24 247 21 Q255 18 258 10 Z" fill="#34d399" />
+            <path d="M302 28 Q304 34 310 36 Q304 38 302 44 Q300 38 294 36 Q300 34 302 28 Z" fill="#34d399" />
+
+            <!-- Roof Chevron & Chimney -->
+            <path d="M232 24 V12 H242 V35" fill="url(#headerLogoGrad)" />
+            <path d="M190 8 L110 46 H130 L190 18 L250 46 H270 Z" fill="url(#headerLogoGrad)" />
+
+            <!-- 4-Pane Window -->
+            <rect x="178" y="27" width="10" height="9" rx="1" fill="url(#headerLogoGrad)" />
+            <rect x="192" y="27" width="10" height="9" rx="1" fill="url(#headerLogoGrad)" />
+            <rect x="178" y="38" width="10" height="9" rx="1" fill="url(#headerLogoGrad)" />
+            <rect x="192" y="38" width="10" height="9" rx="1" fill="url(#headerLogoGrad)" />
+
+            <!-- Horizontal Divider Lines -->
+            <rect x="10" y="44" width="95" height="3.5" rx="1.75" fill="url(#headerLogoGradLeft)" />
+            <rect x="275" y="44" width="95" height="3.5" rx="1.75" fill="url(#headerLogoGradRight)" />
+
+            <!-- Wordmark "CLEAN AND STUFF" -->
+            <text x="190" y="77" text-anchor="middle" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif"
+              font-weight="900" font-size="34" letter-spacing="3" fill="#ffffff">
+              CLEAN AND STUFF
+            </text>
+
+            <!-- Bottom Line -->
+            <rect x="10" y="86" width="360" height="3" rx="1.5" fill="url(#headerLogoGrad)" />
           </svg>
-        </div>
-        <div class="brand-text">
-          <span class="brand-name">CLEAN <span>&amp;</span> STUFF</span>
           <span class="brand-sub" data-i18n="brand_sub">Commercial &amp; Residential Cleaning</span>
         </div>
       </a>
@@ -49,10 +89,8 @@
       <!-- Desktop Navigation Menu -->
       <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
         <a href="#services" class="nav-link" data-i18n="nav_services">Services</a>
-        <a href="#gallery" class="nav-link" data-i18n="nav_results">Results</a>
         <a href="#spaces" class="nav-link" data-i18n="nav_spaces">Portfolio</a>
         <a href="#why-us" class="nav-link" data-i18n="nav_why_us">Why Us</a>
-        <a href="#custom-plans" class="nav-link" data-i18n="nav_scheduling">Scheduling</a>
         <a href="#reviews" class="nav-link" data-i18n="nav_reviews">Reviews</a>
         <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
         <div class="mobile-nav-lang">
@@ -190,11 +228,6 @@
           <span data-i18n="hero_title_1">COMMERCIAL &amp; DEEP CLEANING</span><br>
           <span class="text-highlight" data-i18n="hero_title_2">CENTRAL TEXAS SPECIALISTS</span>
         </h1>
-
-        <p class="hero-subhead">
-          <span data-i18n="hero_subhead">Office Janitorial • Restorative Deep Cleaning • Turnovers • Residential
-            Care</span>
-        </p>
 
         <!-- Clear Action Buttons -->
         <div class="hero-actions">
@@ -1104,7 +1137,7 @@
   <!-- =========================================================================
        Spaces We Clean Photo Carousel (Pure Visual Showcase)
        ========================================================================= -->
-  <section class="spaces-carousel-section" id="spaces-showcase">
+  <section class="spaces-carousel-section" id="spaces">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-subtitle" data-i18n="spaces_subtitle">A Look Inside</span>
@@ -1414,25 +1447,23 @@
 
         <div class="contact-form-card reveal reveal-delay-1">
           <div id="form-success" class="form-success-banner">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              style="vertical-align: middle; margin-right: 4px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12"></polyline>
             </svg>
-            <span data-i18n="contact_success">Thank you! Your request was received. We will call or text you
-              shortly!</span>
+            <span data-i18n="contact_success">Thank you for reaching out! Your form request is now ready to send as a text message.</span>
           </div>
 
           <form id="contact-form">
             <div class="form-grid-2">
               <div class="form-group">
                 <label class="form-label" for="form-name" data-i18n="contact_label_name">Name *</label>
-                <input type="text" id="form-name" class="form-control" placeholder="Your Name / Business Name"
+                <input type="text" id="form-name" name="name" class="form-control" placeholder="Your Name / Business Name"
                   data-i18n-placeholder="contact_placeholder_name" required>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="form-phone" data-i18n="contact_label_phone">Phone (Call/Text) *</label>
-                <input type="tel" id="form-phone" class="form-control" placeholder="512-000-0000"
+                <input type="tel" id="form-phone" name="phone" class="form-control" placeholder="512-000-0000"
                   data-i18n-placeholder="contact_placeholder_phone" required>
               </div>
             </div>
@@ -1440,43 +1471,38 @@
             <div class="form-grid-2">
               <div class="form-group">
                 <label class="form-label" for="form-service" data-i18n="contact_label_service">Service *</label>
-                <select id="form-service" class="form-control" required>
+                <select id="form-service" name="service" class="form-control" required>
                   <option value="" data-i18n="contact_opt_select">Select Service</option>
-                  <option value="commercial-office" data-i18n="contact_opt_com_off">Commercial - Office &amp; Business
-                    Janitorial</option>
-                  <option value="commercial-facility" data-i18n="contact_opt_com_fac">Commercial - Facility &amp; Retail
-                    Care</option>
-                  <option value="deep-clean" data-i18n="contact_opt_deep_clean">Deep Cleaning (Commercial or Home)
-                  </option>
-                  <option value="move-turnover" data-i18n="contact_opt_move_turnover">Move-In / Move-Out Turnover Clean
-                  </option>
-                  <option value="residential-recurring" data-i18n="contact_opt_res_recurring">Residential - Recurring
-                    Home Clean</option>
-                  <option value="residential-standard" data-i18n="contact_opt_res_std">Residential - Standard Clean
-                  </option>
-                  <option value="specialty-post-construction" data-i18n="contact_opt_spec_post">Specialty -
-                    Post-Construction Cleanup</option>
-                  <option value="specialty-custom" data-i18n="contact_opt_spec_cust">Custom Cleaning Scope</option>
+                  <option value="Commercial - Office & Business Janitorial" data-i18n="contact_opt_com_off">Commercial - Office &amp; Business Janitorial</option>
+                  <option value="Commercial - Facility & Retail Care" data-i18n="contact_opt_com_fac">Commercial - Facility &amp; Retail Care</option>
+                  <option value="Deep Cleaning (Commercial or Home)" data-i18n="contact_opt_deep_clean">Deep Cleaning (Commercial or Home)</option>
+                  <option value="Move-In / Move-Out Turnover Clean" data-i18n="contact_opt_move_turnover">Move-In / Move-Out Turnover Clean</option>
+                  <option value="Residential - Recurring Home Clean" data-i18n="contact_opt_res_recurring">Residential - Recurring Home Clean</option>
+                  <option value="Residential - Standard Clean" data-i18n="contact_opt_res_std">Residential - Standard Clean</option>
+                  <option value="Specialty - Post-Construction Cleanup" data-i18n="contact_opt_spec_post">Specialty - Post-Construction Cleanup</option>
+                  <option value="Custom Cleaning Scope" data-i18n="contact_opt_spec_cust">Custom Cleaning Scope</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="form-property" data-i18n="contact_label_property">City / Zip / Square
-                  Footage</label>
-                <input type="text" id="form-property" class="form-control" placeholder="e.g. Austin 78704 (2,500 sq ft)"
+                <label class="form-label" for="form-property" data-i18n="contact_label_property">City / Zip / Square Footage</label>
+                <input type="text" id="form-property" name="property_details" class="form-control" placeholder="e.g. Austin 78704 (2,500 sq ft)"
                   data-i18n-placeholder="contact_placeholder_property">
               </div>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="form-notes" data-i18n="contact_label_notes">Notes / Scope Details</label>
-              <textarea id="form-notes" class="form-control"
+              <textarea id="form-notes" name="notes" class="form-control"
                 placeholder="Facility type, number of rooms/desks, preferred cleaning hours..."
                 data-i18n-placeholder="contact_placeholder_notes"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary hover-lift" style="width: 100%; padding: 0.95rem;">
-              <span data-i18n="contact_btn_submit">Send Free Estimate Request</span>
+            <button type="submit" id="contact-submit-btn" class="btn btn-primary hover-lift" style="width: 100%; padding: 0.95rem; gap: 8px;">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              <span data-i18n="contact_btn_submit">Send Estimate Request via Text</span>
             </button>
           </form>
         </div>

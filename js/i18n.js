@@ -278,7 +278,7 @@ const translations = {
     "contact_direct_title": "Direct Call or Text",
     "contact_btn_call": "Call 512-351-6477",
     "contact_btn_text": "Text Us",
-    "contact_success": "Thank you! Your request was received. We will call or text you shortly!",
+    "contact_success": "Thank you for reaching out! Your form request is now ready to send as a text message.",
     "contact_label_name": "Name *",
     "contact_placeholder_name": "Your Name / Business Name",
     "contact_label_phone": "Phone (Call/Text) *",
@@ -296,8 +296,9 @@ const translations = {
     "contact_label_property": "City / Zip / Square Footage",
     "contact_placeholder_property": "e.g. Austin 78704 (2,500 sq ft)",
     "contact_label_notes": "Notes / Scope Details",
-    "contact_placeholder_notes": "Facility type, number of rooms/desks, preferred cleaning hours...",
-    "contact_btn_submit": "Send Free Estimate Request",
+    "contact_btn_submit": "Send Estimate Request via Text",
+    "contact_success_title": "Thank you! Your estimate request text is ready.",
+    "contact_success_sub": "Your messaging app opened automatically. Tap below if you need to resend:",
 
     // Footer & Mobile Bar
     "footer_rights": "© 2026 Clean and Stuff Cleaning Services. All rights reserved.",
@@ -580,7 +581,7 @@ const translations = {
     "contact_direct_title": "Llamada Directa o Texto",
     "contact_btn_call": "Llamar 512-351-6477",
     "contact_btn_text": "Enviar Mensaje",
-    "contact_success": "¡Muchas gracias! Hemos recibido tu solicitud. ¡Te llamaremos o enviaremos un mensaje en breve!",
+    "contact_success": "¡Gracias por contactarnos! Tu solicitud de formulario ya está lista para enviarse como mensaje de texto.",
     "contact_label_name": "Nombre *",
     "contact_placeholder_name": "Tu Nombre / Nombre de la Empresa",
     "contact_label_phone": "Teléfono (Llamada/Texto) *",
@@ -599,7 +600,9 @@ const translations = {
     "contact_placeholder_property": "ej. Austin 78704 (2,500 sq ft)",
     "contact_label_notes": "Notas / Detalles del Alcance",
     "contact_placeholder_notes": "Tipo de instalación, cantidad de escritorios/habitaciones, horario preferido...",
-    "contact_btn_submit": "Enviar Solicitud de Cotización",
+    "contact_btn_submit": "Enviar Solicitud por Mensaje de Texto",
+    "contact_success_title": "¡Muchas gracias! Tu mensaje de cotización está listo.",
+    "contact_success_sub": "Tu aplicación de mensajes se abrió automáticamente. Toca abajo si deseas reenviarlo:",
 
     // Footer & Mobile Bar
     "footer_rights": "© 2026 Clean and Stuff Cleaning Services. Todos los derechos reservados.",

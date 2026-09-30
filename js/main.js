@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Contact Form Handling
+  // 4. Contact Form Handling (Direct SMS Text Dispatch -> 512-351-6477)
   const contactForm = document.getElementById('contact-form');
   const formSuccess = document.getElementById('form-success');
 
@@ -244,22 +244,35 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
 
       // Collect form values
-      const name = document.getElementById('form-name')?.value || '';
-      const phone = document.getElementById('form-phone')?.value || '';
-      const email = document.getElementById('form-email')?.value || '';
-      const service = document.getElementById('form-service')?.value || '';
-      const property = document.getElementById('form-property')?.value || '';
-      const notes = document.getElementById('form-notes')?.value || '';
+      const name = document.getElementById('form-name')?.value.trim() || 'New Client';
+      const phone = document.getElementById('form-phone')?.value.trim() || 'Not provided';
+      const service = document.getElementById('form-service')?.value.trim() || 'Cleaning Service';
+      const property = document.getElementById('form-property')?.value.trim() || 'Not specified';
+      const notes = document.getElementById('form-notes')?.value.trim() || 'None';
 
-      // Display immediate friendly confirmation
-      formSuccess.style.display = 'block';
-      contactForm.reset();
+      const smsBody = `Hi Clean and Stuff! I'd like a free estimate:\n` +
+        `• Name: ${name}\n` +
+        `• Phone: ${phone}\n` +
+        `• Service: ${service}\n` +
+        `• Location / Sq Ft: ${property}\n` +
+        `• Notes: ${notes}`;
 
-      // Smooth scroll to confirmation
+      // Cross-platform SMS URL format (iOS, Android, macOS Messages)
+      const smsUrl = `sms:5123516477?&body=${encodeURIComponent(smsBody)}`;
+
+      // Display friendly message banner
+      formSuccess.style.display = 'flex';
       formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-      // Create SMS prompt option
-      console.log('Estimate Request Received:', { name, phone, email, service, property, notes });
+      // Automatically launch messaging app
+      try {
+        window.location.href = smsUrl;
+      } catch (err) {
+        console.log('Opened SMS link:', smsUrl);
+      }
+
+      // Reset form fields
+      contactForm.reset();
     });
   }
 
